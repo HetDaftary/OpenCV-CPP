@@ -4,6 +4,12 @@
 using namespace cv;
 using namespace std;
 
+void showImage(cv::Mat img, std::string nameOfWindow, int timeInMilliSeconds = 0) {
+    cv::imshow(nameOfWindow, img);
+    cv::waitKey(timeInMilliSeconds);
+    cv::destroyWindow(nameOfWindow);
+}
+
 int main(int argc, char** argv){
     cv::Mat img;
     img = cv::imread("img/lena.jpg", cv::IMREAD_COLOR);
@@ -13,7 +19,5 @@ int main(int argc, char** argv){
         return -1;
     }
   
-    cv::imshow("Lena", img);
-    cv::waitKey(10000);
-    cv::destroyAllWindows();
+    showImage(img, "Lena", 10000);
 }
