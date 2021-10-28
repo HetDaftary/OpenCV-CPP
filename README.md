@@ -28,8 +28,8 @@ Practicing OpenCV C++
 - 1: Coloured Image.
 - 0: Gray scaled Image.
 - There are many other modes which can be referred to by [Link](https://stackoverflow.com/questions/56063512/what-does-flag-1-in-imread-of-opencv-mean)
-<img src = "img/Screenshot 2021-10-28 at 15-43-46 what does flag -1 in imread of opencv mean.png">
 - [Code File](src/readAndShowImage.cpp)
+<img src = "img/Screenshot 2021-10-28 at 15-43-46 what does flag -1 in imread of opencv mean.png">
 
 ## Show Image to user
 
