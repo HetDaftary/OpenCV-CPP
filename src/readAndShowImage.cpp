@@ -12,7 +12,7 @@ void showImage(cv::Mat img, std::string nameOfWindow, int timeInMilliSeconds = 0
 
 int main(int argc, char** argv){
     cv::Mat img;
-    img = cv::imread("img/lena.jpg", cv::IMREAD_COLOR);
+    img = cv::imread("data/input/images/lena.jpg", cv::IMREAD_COLOR);
   
     if(!img.data){
         std::cout << "Image not found" << std::endl;

@@ -48,8 +48,26 @@ Practicing OpenCV C++
 - cv::destroyAllWindows closes all the windows made by OpenCV.
 - [Code File](src/readAndShowImage.cpp)
 
-## Write an image file.
+## Write an image file
 
 - Function to be used: <b>imwrite</b>.
 - You need to pass fileName and image file(cv::Mat type file) to save the image.
 - [Code File](src/writeImage.cpp)
+
+## Load a video file
+
+- Function to be use: Same as images.
+- Type that handles videos: <b>cv::VideoCapture</b>
+- You can use the following function to show a frame of the video
+
+
+        bool showImageOfVideo(cv::Mat img, std::string nameOfWindow, int timeInMilliSeconds = 0) {
+            cv::imshow(nameOfWindow, img);
+            char toBreak = cv::waitKey(timeInMilliSeconds);
+            if (toBreak == 'q' || toBreak == 'Q') return true;
+            return false;
+        }
+- Here we use toBreak to store return value of waitKey to know which key was pressed.
+- <b>cv::waitKey</b> listens to the keyboard and breaks and returns the first key pressed in the time.
+- When user presses 'q' or 'Q'(i.e. q but when caps lock is on), we want to end the video playing.
+- [Code File](src/loadVideo.cpp)
