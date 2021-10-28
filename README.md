@@ -14,6 +14,12 @@ Practicing OpenCV C++
 
 - Namespace to be used to call OpenCV functions: <b>cv</b>.
 - Ubuntu or a Debian based distro is recommended to use has Arch based distros tend to get some weird errors related to path.
+- We are using a python file to compile and run the programs for convenience. 
+- Way to compile and run with python program.
+
+                python3 compileAndRun.py src/readAndShowImage.cpp
+- We pass the cpp file path to python3 code as argv.
+- <b>Note</b> that all the programs are tested from working directory and thus paths are written with respect to the working directory.
 
 ## Read Images
 
@@ -41,3 +47,9 @@ Practicing OpenCV C++
 - cv::destroyWindow only closes one window.
 - cv::destroyAllWindows closes all the windows made by OpenCV.
 - [Code File](src/readAndShowImage.cpp)
+
+## Write an image file.
+
+- Function to be used: <b>imwrite</b>.
+- You need to pass fileName and image file(cv::Mat type file) to save the image.
+- [Code File](src/writeImage.cpp)
