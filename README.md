@@ -91,3 +91,25 @@ Practicing OpenCV C++
             dontset = 0;
         }
 - Function signature(arguments and return type) is important here.
+- [Code File](src/trackbar.cpp)
+
+## Blur in OpenCV 
+
+There 3 main types of blur
+- Normal blur: <b>cv::blur</b>
+		
+		cv::blur(img, dest, cv::Size(9, 9));
+
+- Median blur: <b>cv::medianBlur</b>
+
+		cv::medianBlur(img, dest, 9);
+
+- Gaussian blur: <b>cv::GaussianBlur</b>
+
+		cv::GaussianBlur(img, dest, cv::Size(9, 9), 0.0, 0.0, 4);
+
+- Resize the image(Decrease the size): <b>cv::resize</b>
+
+		cv::resize(img, dest, img.size(), 0.75, 0.75, cv::INTER_CUBIC);
+
+- [Code File](src/blurImages.cpp)
