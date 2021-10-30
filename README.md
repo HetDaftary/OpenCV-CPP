@@ -1,5 +1,5 @@
 # OpenCV-CPP
-Practicing OpenCV C++
+Learning OpenCV C++
 
 ## Installation
 
