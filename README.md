@@ -67,7 +67,27 @@ Practicing OpenCV C++
             if (toBreak == 'q' || toBreak == 'Q') return true;
             return false;
         }
+
 - Here we use toBreak to store return value of waitKey to know which key was pressed.
 - <b>cv::waitKey</b> listens to the keyboard and breaks and returns the first key pressed in the time.
 - When user presses 'q' or 'Q'(i.e. q but when caps lock is on), we want to end the video playing.
 - [Code File](src/loadVideo.cpp)
+
+## Making a trackbar using OpenCV
+
+- You need an action to change trackbar which is done with a function.
+- The functions to be used: <b>cv::createTrackbar, cv::setTrackbarPos</b>
+- Create Trackbar function:
+
+        cv::createTrackbar("trackbar", "Window", NULL, frames, onTrackbarChange, NULL);
+
+- Here onTrackbarChange is a function that program has to call when we change the value of trackbar with mouse.
+
+        void onTrackbarChange(int pos, void*) {
+            cap.set(cv::CAP_PROP_POS_FRAMES, pos);
+            if (!dontset) {
+                run = 1;
+            }
+            dontset = 0;
+        }
+- Function signature(arguments and return type) is important here.
