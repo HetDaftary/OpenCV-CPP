@@ -3,8 +3,13 @@ Learning OpenCV C++
 
 ## Installation
 
-- [Guide for Windows](https://www.youtube.com/watch?v=m9HBM1m_EMU)
-- [Guide for Linux](https://github.com/lvnlinh1812/Build_OpenCv_Cplusplus)
+- [Guide for Windows](https://towardsdatascience.com/install-and-configure-opencv-4-2-0-in-windows-10-vc-d132c52063a1)
+- Note that it is OpenCV Website -> Library -> Releases and not Resources -> Releases.
+- It is either a typo on the website side or OpenCV changed it right now.
+- For Linux: Just run [Install-OpenCV.sh](scripts/Install-OpenCV.sh)
+- This script depends on opencv.pc file in the scripts folder.
+- So prefer to go in the scripts folder and run it.
+- The opencv.pc file should be in the same dir from where you are running.
 
 ## General Info 
 
