@@ -1,7 +1,7 @@
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <cstdlib>
 #include <cstdio>
+#include <opencv2/opencv.hpp>
 
 using namespace std;
 using namespace cv;

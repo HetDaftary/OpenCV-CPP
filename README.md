@@ -7,15 +7,12 @@ Learning OpenCV C++
 - Note that it is OpenCV Website -> Library -> Releases and not Resources -> Releases.
 - It is either a typo on the website side or OpenCV changed it right now.
 - For Linux: Just run [Install-OpenCV.sh](scripts/Install-OpenCV.sh)
-- This script depends on opencv.pc file in the scripts folder.
-- So prefer to go in the scripts folder and run it.
-- The opencv.pc file should be in the same dir from where you are running.
 
 ## General Info 
 
 - Compiling C++ code with GNU/G++ on Linux.
 
-        g++ test.cpp -o test -std=c++11 `pkg-config --cflags --libs`
+        g++ test.cpp -o test -std=c++11 `pkg-config --cflags --libs opencv`
 
 - Namespace to be used to call OpenCV functions: <b>cv</b>.
 - Ubuntu or a Debian based distro is recommended to use has Arch based distros tend to get some weird errors related to path.
@@ -111,10 +108,10 @@ There 3 main types of blur
 
 - Gaussian blur: <b>cv::GaussianBlur</b>
 
-		cv::GaussianBlur(img, dest, cv::Size(9, 9), 0.0, 0.0, 4);
+        cv::GaussianBlur(img, dest, cv::Size(9, 9), 0.0, 0.0, 4);
 
 - Resize the image(Decrease the size): <b>cv::resize</b>
 
-		cv::resize(img, dest, img.size(), 0.75, 0.75, cv::INTER_CUBIC);
+	    cv::resize(img, dest, img.size(), 0.75, 0.75, cv::INTER_CUBIC);
 
 - [Code File](src/blurImages.cpp)

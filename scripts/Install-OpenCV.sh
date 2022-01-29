@@ -1,25 +1,16 @@
-# Install minimal prerequisites (Ubuntu 18.04 as reference)
-sudo apt update && sudo apt install -y cmake g++ wget unzip
-# Download and unpack sources
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.x.zip
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.x.zip
-unzip opencv.zip
-unzip opencv_contrib.zip
-# Create build directory and switch into it
-mkdir -p build && cd build
-# Configure
-cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.x/modules ../opencv-4.x
-# Build
-cmake --build .
-
-sudo make -j8
-
-sudo make install
-
-pathForPkgConfig="/usr/local/lib/pkgconfig" 
-
-if [ ! -d $pathForPkgConfig ]; then
-	sudo mkdir -p pathForPkgConfig
-fi
-
-sudo cp opencv.pc $pathForPkgConfig
+sudo apt update
+sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+sudo -s
+cd /opt
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv
+mkdir release
+cd release
+cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D OPENCV_GENERATE_PKGCONFIG=ON -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
+make -j8
+make install
+ldconfig
+exit
+cd ~
+sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/x86_64-linux-gnu/pkgconfig/opencv.pc
