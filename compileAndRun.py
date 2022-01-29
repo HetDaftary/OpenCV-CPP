@@ -9,7 +9,8 @@ if __name__ == "__main__":
     '''
 
     fileName = argv[1].split("/")[-1]
+    fileNameWithoutExtension = fileName.split(".")[0]
 
-    system("g++ {} -o \"build/{}.o\" --std=c++11 `pkg-config --cflags --libs opencv`".format(argv[1], fileName))
+    system("g++ {} -o \"build/{}.out\" --std=c++11 `pkg-config --cflags --libs opencv`".format(argv[1], fileNameWithoutExtension))
 
-    system("./build/{}.o".format(fileName))
+    system("./build/{}.out".format(fileName))
