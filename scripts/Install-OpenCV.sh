@@ -1,6 +1,5 @@
 sudo apt update
 sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo -s
 cd /opt
 sudo git clone https://github.com/opencv/opencv.git
 sudo git clone https://github.com/opencv/opencv_contrib.git
