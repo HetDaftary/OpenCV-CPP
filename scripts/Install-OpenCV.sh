@@ -11,4 +11,9 @@ sudo make -j8
 sudo make install
 sudo ldconfig
 cd ~
+
+if [ ! -d /usr/local/lib/pkgconfig ]; then 
+  sudo mkdir /usr/local/lib/pkgconfig
+fi
+
 sudo cp /usr/local/lib/pkgconfig/opencv4.pc /usr/lib/x86_64-linux-gnu/pkgconfig/opencv.pc
