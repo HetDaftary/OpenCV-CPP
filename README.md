@@ -13,6 +13,12 @@ Learning OpenCV C++
 - Compiling C++ code with GNU/G++ on Linux.
 
         g++ test.cpp -o test -std=c++11 `pkg-config --cflags --libs opencv`
+	
+- Add these to your Makefile if you are compiling in Linux.
+- Then use <b>CFLAGS for making .o</b> and <b>LDFLAGS for making final executable</b>.
+	
+		CFLAGS = `pkg-config --cflags opencv`
+		LDFLAGS = `pkg-config --libs opencv`
 
 - Namespace to be used to call OpenCV functions: <b>cv</b>.
 - Ubuntu or a Debian based distro is recommended to use has Arch based distros tend to get some weird errors related to path.
